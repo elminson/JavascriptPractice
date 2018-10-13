@@ -16,7 +16,47 @@
 //       '##  '
 //       '### '
 //       '####'
+//recursion
+function steps(n, row = 0, stairs = '') {
+  if(n == row) return;
 
-function steps(n) {}
+  if(n === stairs.length){
+    console.log(stairs);
+    return steps(n, row + 1);
+  }
+  if(row >= stairs.length){
+    stairs +="#";
+  } else {
+    stairs +=" ";
+  }
+  return steps(n, row ,stairs);
+}
 
 module.exports = steps;
+//
+// function steps(n) {
+//   for(let index=0;index < n; index++){
+//     var result="";
+//     for(let indexx=0;indexx < n; indexx++){
+//         if(index<indexx){
+//           result += " ";
+//         }
+//         else {
+//           result += "#";
+//         }
+//   }
+
+// function steps(n) {
+//   for(let index=0;index < n; index++){
+//     console.log(printR(index).padEnd(n," "))
+//   //  console.log(pad(n,printR(index).," "))
+//   }
+// }
+//
+// function printR(n){
+//   var result="";
+//   for(let index=0;index <= n; index++){
+//     result +="#"
+//   }
+//   return result;
+// }
